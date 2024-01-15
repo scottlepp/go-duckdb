@@ -82,7 +82,7 @@ func TestAppender(t *testing.T) {
 	}
 	randRow := func(i int) dataRow {
 		u64 := rand.Uint64()
-		// go sql doesn't support uint64 values with high bit set (see for example https://github.com/lib/pq/issues/72)
+		// go sql doesn't support uint64 values with high bit setPrimitive (see for example https://github.com/lib/pq/issues/72)
 		if u64 > 9223372036854775807 {
 			u64 = 9223372036854775807
 		}
@@ -141,19 +141,19 @@ func TestAppender(t *testing.T) {
 	res, err := db.QueryContext(
 		context.Background(), `
 			SELECT  id,
-							uint8,
-							int8,
-							uint16,
-							int16,
-							uint32,
-							int32,
-							uint64,
-							int64,
-							timestamp,
-							float,
-							double,
-							string,
-							bool
+					uint8,
+					int8,
+					uint16,
+					int16,
+					uint32,
+					int32,
+					uint64,
+					int64,
+					timestamp,
+					float,
+					double,
+					string,
+					bool
       FROM test
       ORDER BY id`)
 	require.NoError(t, err)
