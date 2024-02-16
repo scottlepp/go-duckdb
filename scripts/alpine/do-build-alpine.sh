@@ -2,8 +2,6 @@
 
 cd /home
 
-CGO_ENABLED=1 
-
 ### build using zig
 export CGO_LDFLAGS="-L/home/lib"
 export CC="zig cc -target x86_64-linux-musl"
