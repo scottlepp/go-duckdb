@@ -1,0 +1,4 @@
+Name: duck
+Description: duck
+Version: 0.9
+Libs: -L/home/lib -lduckdb
